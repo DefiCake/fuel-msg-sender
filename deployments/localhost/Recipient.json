@@ -1,0 +1,58 @@
+{
+  "address": "0x98c899f795ce8C3b161f03a2d8e0c3295C1B27a1",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "Data",
+      "type": "event"
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    }
+  ],
+  "transactionHash": "0x33a1fbed2c681507084eb2458fd2045ab7eb2f9ab7450a893ced328dbce2c070",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x98c899f795ce8C3b161f03a2d8e0c3295C1B27a1",
+    "transactionIndex": 0,
+    "gasUsed": "107409",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x8dbd17160ba90761eb057d1f333bc3ca82954c0c9d12749062b242bd40926578",
+    "transactionHash": "0x33a1fbed2c681507084eb2458fd2045ab7eb2f9ab7450a893ced328dbce2c070",
+    "logs": [],
+    "blockNumber": 4910466,
+    "cumulativeGasUsed": "107409",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "f457cb4bc581feaf711288aac7879176",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"Data\",\"type\":\"event\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Recipient.sol\":\"Recipient\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Recipient.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.9;\\n\\ncontract Recipient {\\n    event Data(bytes data);\\n\\n    fallback() external {\\n        emit Data(msg.data);\\n    }\\n}\\n\",\"keccak256\":\"0x2c72f191feb642e305c5c79c7d59b8e00cc2d3fbc93d38787551ac1e41dfb9ed\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060fa8061001f6000396000f3fe6080604052348015600f57600080fd5b507f0b76c48be4e2908f4c9d4eabaf7538e91577fd9ae26db46693fa8d861c6a42fb600036604051604092919060a2565b60405180910390a1005b600082825260208201905092915050565b82818337600083830152505050565b6000601f19601f8301169050919050565b600060858385604a565b93506090838584605b565b609783606a565b840190509392505050565b6000602082019050818103600083015260bb818486607b565b9050939250505056fea26469706673582212209397feae720eb81ccf0ee8416f1c745b3dd9951ca02c8b876677394a7808003e64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b507f0b76c48be4e2908f4c9d4eabaf7538e91577fd9ae26db46693fa8d861c6a42fb600036604051604092919060a2565b60405180910390a1005b600082825260208201905092915050565b82818337600083830152505050565b6000601f19601f8301169050919050565b600060858385604a565b93506090838584605b565b609783606a565b840190509392505050565b6000602082019050818103600083015260bb818486607b565b9050939250505056fea26469706673582212209397feae720eb81ccf0ee8416f1c745b3dd9951ca02c8b876677394a7808003e64736f6c63430008130033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

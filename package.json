@@ -1,0 +1,15 @@
+{
+  "name": "hardhat-project",
+  "scripts": {
+    "send": "forc run --node-url https://beta-4.fuel.network/graphql"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fuels": "^0.63.0",
+    "hardhat-deploy": "^0.11.45"
+  }
+}
