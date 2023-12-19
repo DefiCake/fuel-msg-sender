@@ -4,6 +4,15 @@
 pragma solidity ^0.8.9;
 
 interface FuelMessagePortal {
+    error UnfinalizedBlock();
+    error InvalidBlockInHistoryProof();
+    error InvalidMessageInBlockProof();
+    error CurrentMessageSenderNotSet();
+    error MessageDataTooLarge();
+    error AmountPrecisionIncompatibility();
+    error AmountTooBig();
+    error AlreadyRelayed();
+    
     /// @notice Relays a message published on Fuel from a given block
     /// @param message The message to relay
     /// @param rootBlockHeader The root block for proving chain history

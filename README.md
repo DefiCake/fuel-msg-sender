@@ -1,10 +1,12 @@
-# Sending a message
+# Sending a message from Fuel to ETH
 
 1. Modify `main.sw` with the desired recipient and message data
 2. Run `forc build`
 3. Run `npm run send -- <SIGNING_KEY>` where the key is the private key with proper funds on Fuel.
 
-# Sent message:
+Anotate the output 's `MessageOut`, you will need it later
+
+## Example sent message:
 
 ```json
 [
@@ -33,3 +35,29 @@
   { "ScriptResult": { "gas_used": 258, "result": "Success" } }
 ]
 ```
+
+
+# Relaying the sent message in ETH network
+
+Replace:
+
+```ts
+export const MESSAGE_OUT = {
+  amount: bn(0),
+  data: [
+    79, 247, 70, 246, 97, 103, 103, 114, 101, 103, 97, 116, 101, 82, 111, 111,
+    116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  ],
+  digest: "a6d7e646102900dcbc590015d4688801cb29528e07ced88428606519f701a04e",
+  len: 36,
+  nonce: "6e73dbd15aba133ee97b8fb33e0b996e1768ddbf4f66d306c5e788747d7f9548",
+  recipient: "0000000000000000000000008d8bb34fb9a1a52ac0bddc9901c5c7b5e7347d05",
+  sender: "128573a29021c87688cd5cff01f2247400c210741b563c9ad8140009dea2b620",
+};
+
+```
+
+With your own message that you have noted on the first step. Then run:
+
+- `npx hardhat run scripts/simulate_relay.ts` to do a static call and check that the message can be correctly relayed
+- `ETH_PRIVATE_KEY="PRIVATE_KEY" npx hardhat run scripts/relay.ts` (or configure it via `.env`) to actually send the transaction and relay the message
