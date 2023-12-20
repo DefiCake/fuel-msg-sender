@@ -1,10 +1,11 @@
 import hre from "hardhat";
+import fs from "fs-extra";
 
 import { Provider, ReceiptMessageOutCoder, bn } from "fuels";
 import {
   FUEL_CHAIN_STATE,
   FUEL_MESSAGE_PORTAL,
-  MESSAGE_OUT,
+  MESSAGE_OUT_3 as MESSAGE_OUT,
 } from "./constants";
 import {
   FuelChainState__factory,
@@ -68,13 +69,16 @@ const main = async () => {
     throw new Error("Could not create proof");
   }
 
+  const relayMessage = createRelayMessage(message_proof);
+  fs.writeJSONSync("./smart_contract_args.json", relayMessage);
+
   const {
     message,
     rootBlockHeader,
     blockHeader,
     blockInHistoryProof,
     messageInBlockProof,
-  } = createRelayMessage(message_proof);
+  } = relayMessage;
 
   await message_portal.relayMessage.staticCall(
     message,

@@ -4,7 +4,7 @@ import { Provider, ReceiptMessageOutCoder, bn } from "fuels";
 import {
   FUEL_CHAIN_STATE,
   FUEL_MESSAGE_PORTAL,
-  MESSAGE_OUT,
+  MESSAGE_OUT_3 as MESSAGE_OUT,
 } from "./constants";
 import {
   FuelChainState__factory,
@@ -78,7 +78,7 @@ const main = async () => {
     messageInBlockProof,
   } = createRelayMessage(message_proof);
 
-  await message_portal
+  const tx = await message_portal
     .connect(eth_wallet)
     .relayMessage(
       message,
@@ -87,6 +87,8 @@ const main = async () => {
       blockInHistoryProof,
       messageInBlockProof
     ); // If it does not revert, then all is good
+
+  console.log("\t> Tx hash: ", tx.hash);
 };
 
 main()
